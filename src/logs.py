@@ -4,6 +4,7 @@ import logging.config
 
 from typing import Any
 
+
 # USAGE
 # import logging.config
 # logging.config.dictConfig(get_standard_container_config())
@@ -12,6 +13,7 @@ from typing import Any
 def get_standard_container_config(debug=False) -> dict[str, Any]:
     config = {
         "version": 1,
+        "disable_existing_loggers": False,
         "formatters": {
             "standard": {
                 "format": "{asctime} {name}:{funcName}:{lineno} {levelname} {message}",
@@ -33,11 +35,9 @@ def get_standard_container_config(debug=False) -> dict[str, Any]:
     return config
 
 
-def set_dict_config(config):
-    import logging.config
-
+def set_dict_config(config) -> None:
     logging.config.dictConfig(config)
 
 
-def set_standard_container_config(debug=False):
+def set_standard_container_config(debug=False) -> None:
     set_dict_config(get_standard_container_config(debug))
