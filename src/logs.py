@@ -39,5 +39,5 @@ def set_dict_config(config):
     logging.config.dictConfig(config)
 
 
-def set_standard_container_config():
-    set_dict_config(get_standard_container_config())
+def set_standard_container_config(debug=False):
+    set_dict_config(get_standard_container_config(debug))
