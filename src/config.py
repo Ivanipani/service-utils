@@ -19,5 +19,5 @@ class EnvironmentConfigInterface(ServiceConfigInterface):
     def __init__(self) -> None:
         super().__init__()
 
-    def get(key: str) -> str | None:
+    def get(self, key: str) -> str | None:
         return os.environ.get(key)
