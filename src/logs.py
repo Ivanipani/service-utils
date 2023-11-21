@@ -31,3 +31,13 @@ def get_standard_container_config(debug=False) -> dict[str, Any]:
         },  # root logger
     }
     return config
+
+
+def set_dict_config(config):
+    import logging.config
+
+    logging.config.dictConfig(config)
+
+
+def set_standard_container_config():
+    set_dict_config(get_standard_container_config())
