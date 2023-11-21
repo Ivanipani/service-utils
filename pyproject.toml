@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "service-util"
+description = "Common setup, configuration logic for Python services"
+dynamic = ["version", "dependencies"]
+
+[tool.setuptools_scm]
+version_file = "service-util/_version.py"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
