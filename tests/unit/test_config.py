@@ -60,3 +60,10 @@ def test_get_int_bad_value_raises_exception():
     cfg = config.EnvironmentConfig()
     with pytest.raises(ValueError):
         cfg.getInt("TEST_GET_BOOL")
+
+
+def test_environment_config_validate():
+    os.environ["TEST_GET_BOOL"] = "NOT INT"
+
+    with pytest.raises(NotImplementedError):
+        cfg = config.EnvironmentConfig(validate=True)

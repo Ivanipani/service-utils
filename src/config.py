@@ -7,8 +7,9 @@ load_dotenv()
 
 
 class ServiceConfigInterface:
-    def __init__(self):
-        self.validate()  # raises exception, cannot instantiate
+    def __init__(self, validate=False):
+        if validate:
+            self.validate()  # raises exception, cannot instantiate
 
     def getStr(self, key: str):
         raise NotImplementedError
@@ -24,8 +25,8 @@ class ServiceConfigInterface:
 
 
 class EnvironmentConfig(ServiceConfigInterface):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, validate=False) -> None:
+        super().__init__(validate)
 
     def getStr(self, key: str) -> str | None:
         return os.environ.get(key)
@@ -46,6 +47,3 @@ class EnvironmentConfig(ServiceConfigInterface):
         if isinstance(value, str):
             return int(value)
         return None
-
-    def validate(self):
-        pass
