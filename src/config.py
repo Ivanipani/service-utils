@@ -1,9 +1,12 @@
 import os
+import logging
 
 from dotenv import load_dotenv
 
 # Parse .env file, load all environment variables
 load_dotenv()
+
+logger = logging.getLogger(__name__)
 
 
 class ServiceConfigInterface:
@@ -26,6 +29,7 @@ class ServiceConfigInterface:
 
 class EnvironmentConfig(ServiceConfigInterface):
     def __init__(self, validate=False) -> None:
+        logger.debug(os.environ)
         super().__init__(validate)
 
     def getStr(self, key: str) -> str | None:
