@@ -29,7 +29,6 @@ class ServiceConfigInterface:
 
 class EnvironmentConfig(ServiceConfigInterface):
     def __init__(self, validate=False) -> None:
-        logger.info(os.environ)
         super().__init__(validate)
 
     def getStr(self, key: str) -> str | None:
@@ -51,3 +50,6 @@ class EnvironmentConfig(ServiceConfigInterface):
         if isinstance(value, str):
             return int(value)
         return None
+
+    def getEnv(self):
+        return os.environ
