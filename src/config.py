@@ -29,7 +29,7 @@ class ServiceConfigInterface:
 
 class EnvironmentConfig(ServiceConfigInterface):
     def __init__(self, validate=False) -> None:
-        logger.debug(os.environ)
+        logger.info(os.environ)
         super().__init__(validate)
 
     def getStr(self, key: str) -> str | None:
