@@ -3,9 +3,6 @@ import logging
 
 from dotenv import load_dotenv
 
-# Parse .env file, load all environment variables
-load_dotenv()
-
 logger = logging.getLogger(__name__)
 
 
@@ -30,6 +27,9 @@ class ServiceConfigInterface:
 class EnvironmentConfig(ServiceConfigInterface):
     def __init__(self, validate=False) -> None:
         super().__init__(validate)
+
+        # Parse .env file, load all environment variables
+        load_dotenv()
 
     def getStr(self, key: str) -> str | None:
         return os.environ.get(key)
