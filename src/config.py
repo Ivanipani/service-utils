@@ -1,7 +1,7 @@
 import os
 import logging
 
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +29,7 @@ class EnvironmentConfig(ServiceConfigInterface):
         super().__init__(validate)
 
         # Parse .env file, load all environment variables
-        load_dotenv(find_dotenv())
+        load_dotenv(verbose=True)
 
     def getStr(self, key: str) -> str | None:
         return os.environ.get(key)
