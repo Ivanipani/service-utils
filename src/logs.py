@@ -16,8 +16,8 @@ def get_standard_container_config(debug=False) -> dict[str, Any]:
         "disable_existing_loggers": False,
         "formatters": {
             "standard": {
-                "format": "{asctime} {name}:{funcName}:{lineno} {levelname} {message}",
-                "style": "{",
+                "format": "%(asctime)s %(name)s:%(funcName)s:%(lineno)d %(levelname)s %(message)s",
+                "style": "%",
             }
         },
         "handlers": {
