@@ -15,8 +15,5 @@ dynamic = ["version", "dependencies"]
 [tool.setuptools_scm]
 version_file = "_version.py"
 
-[tool.setuptools.packages.find]
-where = ["./dabah/"]
-
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
