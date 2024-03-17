@@ -5,6 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dabah.service.utils"
 description = "Common setup, configuration logic for Python services"
+authors = [
+    {name = "Ivan Perdomo", email = "iperdomo2016@gmail.com"},
+]
+readme = "README.md"
+requires-python = ">=3.7"
 dynamic = ["version", "dependencies"]
 
 [tool.setuptools_scm]
