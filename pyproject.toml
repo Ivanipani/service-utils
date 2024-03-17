@@ -3,15 +3,15 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "service-util"
+name = "dabah.service.utils"
 description = "Common setup, configuration logic for Python services"
 dynamic = ["version", "dependencies"]
 
 [tool.setuptools_scm]
-version_file = "src/_version.py"
+version_file = "_version.py"
 
-[tool.setuptools.package-dir]
-"service_util" = "src"
+[tool.setuptools.packages.find]
+where = ["./dabah/"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}

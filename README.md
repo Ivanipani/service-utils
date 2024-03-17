@@ -1,2 +1,4 @@
-# service-util
-Common setup + configuration logic for Python services
+# Service Utils
+Common setup + configuration logic for Dabah's Python services.
+
+Package name is `dabah.service.utils`.

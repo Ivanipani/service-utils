@@ -1,24 +1,22 @@
-PYTHON_VERSION=3.11
+PYTHON_VERSION=3.12
 VENV_NAME=.venv
 
 # Default target
 all: help
 
-# Install dependencies
-install-deps:
-	python3.11 -m venv .venv;
-	. $(VENV_NAME)/bin/activate; pip install -r requirements-dev.txt
+help:
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-# Run unit tests
-unit-test:
-	. $(VENV_NAME)/bin/activate; python -m pytest ./tests/unit
+venv: ## Create virtual environment
+	python$(PYTHON_VERSION) -m venv $(VENV_NAME)
 
-# Clean up generated files and directories
-clean:
+install-deps: ## install Python dependencies
+	pip install -r requirements-dev.txt
+
+unit-test: ## Run unit tests
+	python$(PYTHON_VERSION) -m pytest ./tests/unit
+
+
+clean: ## Clean up generated files and directories
 	rm -rf $(VENV_NAME) __pycache__
 
-help:
-	@echo "Available commands:"
-	@echo "  install-deps: Install dependencies from requirements.txt"
-	@echo "  unit-test: Run unit tests"
-	@echo "  clean: Clean up generated files and directories"

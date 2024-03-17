@@ -2,7 +2,7 @@ import pytest
 import os
 import logging
 
-import src.config as config
+import dabah.service.utils.config as config
 
 logger = logging.getLogger(__name__)
 
