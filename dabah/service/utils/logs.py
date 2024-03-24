@@ -10,7 +10,7 @@ from typing import Any
 # logging.config.dictConfig(get_standard_container_config())
 
 
-def get_standard_container_config(debug=False) -> dict[str, Any]:
+def _get_standard_container_config(debug=False) -> dict[str, Any]:
     config = {
         "version": 1,
         "disable_existing_loggers": False,
@@ -35,9 +35,9 @@ def get_standard_container_config(debug=False) -> dict[str, Any]:
     return config
 
 
-def set_dict_config(config) -> None:
+def _set_dict_config(config) -> None:
     logging.config.dictConfig(config)
 
 
 def set_standard_container_config(debug=False) -> None:
-    set_dict_config(get_standard_container_config(debug))
+    _set_dict_config(_get_standard_container_config(debug))

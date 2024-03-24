@@ -17,3 +17,10 @@ version_file = "_version.py"
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["dabah.service.utils"]
+
+[tool.pytest.ini_options]
+log_cli = 1
+log_cli_level = "DEBUG"

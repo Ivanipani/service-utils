@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  postgres:
+    image: ivanipani1/postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dabah-user -d dabah-db"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
+
+  dev: &dev
+    build:
+      context: .
+      dockerfile: docker/dev.Dockerfile
+      args:
+        GITHUB_USER:
+        GITHUB_TOKEN:
+    command: sleep infinity
+    volumes:
+      - .:/workarea
+
+  test:
+    << : *dev
+    depends_on:
+      postgres:
+        condition: service_healthy
