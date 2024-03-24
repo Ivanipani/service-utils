@@ -62,3 +62,9 @@ class EnvironmentConfig(ServiceConfigInterface):
     def getEnv(self):
         """Return all environment variables."""
         return os.environ
+
+    def dump(self):
+        """Dump environment variables to a string."""
+        return "\n".join(
+            [f"{key}={value}" for key, value in sorted(os.environ.items())]
+        )
