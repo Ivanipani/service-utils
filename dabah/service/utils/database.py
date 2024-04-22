@@ -22,6 +22,8 @@ def create_connection(
     )
 
     register_composite(CompositeInfo.fetch(conn, "ingredient"), conn)
+    register_composite(CompositeInfo.fetch(conn, "instruction"), conn)
+    register_composite(CompositeInfo.fetch(conn, "timer"), conn)
     return conn
 
 
