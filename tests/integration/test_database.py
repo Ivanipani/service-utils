@@ -7,9 +7,9 @@ import dabah.service.utils.database as database
 PSQL_CONFIG = database.PostgresConnectionConfig(
     host="postgres",
     port=5432,
-    dbname="dabah-db",
-    user="dabah-user",
-    password="dabah-password",
+    dbname="dabahdb",
+    user="remy",
+    password="password",
 )
 
 

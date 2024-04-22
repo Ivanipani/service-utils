@@ -5,8 +5,12 @@ services:
     ports:
       - "5432:5432"
     restart: always
+    environment:
+      POSTGRES_USER: remy
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: dabahdb
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U dabah-user -d dabah-db"]
+      test: ["CMD-SHELL", "pg_isready -U remy -d dabahdb"]
       interval: 3s
       timeout: 5s
       retries: 5
@@ -21,6 +25,9 @@ services:
     command: sleep infinity
     volumes:
       - .:/workarea
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   test:
     << : *dev
