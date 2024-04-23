@@ -1,17 +1,16 @@
 import uuid
-from typing import Union
+from typing import Optional
 
 
 class InvalidGrpcRequest(Exception):
     pass
 
 
-def valid_uuid(data: str) -> Union[uuid.UUID, bool]:
-    """Validate if a string or uuid.UUID is a valid UUID.
-
-    Validity is checked by converting to string and back to uuid.UUID
-    """
+def uuid_from_string(data: str):
+    """Create uuid.UUID object from string. If invalid, return None."""
     try:
-        return uuid.UUID(str(data))
+        if not isinstance(data, str):
+            return None
+        return uuid.UUID(data)
     except ValueError:
-        return False
+        return None
