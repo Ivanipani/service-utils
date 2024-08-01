@@ -8,6 +8,7 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "psycog>=0.0.1",
 ]
+dynamic = ["version"]
 readme = "README.md"
 requires-python = ">= 3.12"
 
