@@ -16,8 +16,6 @@ packaging==24.1
     # via pytest
 pluggy==1.5.0
     # via pytest
-psycog==0.0.1
-    # via dabah-service-utils
 psycopg==3.2.1
     # via dabah-service-utils
 pytest==8.3.2

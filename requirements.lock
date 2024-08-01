@@ -10,8 +10,6 @@
 #   universal: false
 
 -e file:.
-psycog==0.0.1
-    # via dabah-service-utils
 psycopg==3.2.1
     # via dabah-service-utils
 python-dotenv==1.0.1
