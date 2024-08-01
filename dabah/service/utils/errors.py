@@ -1,0 +1,2 @@
+class ServiceConfigurationError(Exception):
+    pass
