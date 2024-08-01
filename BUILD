@@ -1,8 +1,9 @@
 python_requirements(
-    name="reqs",
-    source="requirements-dev.txt",
+    name="dependencies",
+    source="pyproject.toml",
 )
 
-python_requirements(
-    name="reqs0",
-)
+python_sources(name="src", sources=["dabah/service/utils/**/*.py"])
+
+python_tests(name="test-unit", sources=["tests/unit/test_*.py"])
+python_tests(name="test-integration", sources=["tests/integration/test_*.py"])
