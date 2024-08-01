@@ -1,26 +1,39 @@
-[build-system]
-requires = ["setuptools", "setuptools-scm"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "dabah.service.utils"
 description = "Common setup, configuration logic for Python services"
 authors = [
-    {name = "Ivan Perdomo", email = "iperdomo2016@gmail.com"},
+    { name = "Ivan Perdomo", email = "iperdomo2016@gmail.com" }
+]
+dependencies = [
+    "python-dotenv>=1.0.1",
+    "psycog>=0.0.1",
 ]
 readme = "README.md"
-requires-python = ">=3.7"
-dynamic = ["version", "dependencies"]
+requires-python = ">= 3.12"
 
-[tool.setuptools_scm]
-version_file = "_version.py"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.3.2",
+]
 
-[tool.setuptools.packages.find]
-include = ["dabah.service.utils"]
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["dabah/service/utils"]
 
 [tool.pytest.ini_options]
 log_cli = 1
 log_cli_level = "DEBUG"
+
+[tool.ruff.lint]
+extend-select = ["I", "UP"]
+
+[tool.hatch.version]
+path = ".project-version"
+pattern = "(?P<version>[^']+)"

@@ -1,4 +1,4 @@
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 
 import psycopg
 from psycopg.rows import dict_row
@@ -34,7 +34,7 @@ def with_connection(config, autocommit=False):
 
             try:
                 rc = func(conn, *args, **kwargs)
-            except Exception as e:
+            except Exception:
                 conn.rollback()
                 raise
             else:

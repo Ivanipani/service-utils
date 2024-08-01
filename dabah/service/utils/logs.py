@@ -1,9 +1,7 @@
-import sys
 import logging
 import logging.config
-
+import sys
 from typing import Any
-
 
 # USAGE
 # import logging.config

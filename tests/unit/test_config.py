@@ -1,6 +1,7 @@
-import pytest
-import os
 import logging
+import os
+
+import pytest
 
 import dabah.service.utils.config as config
 
@@ -34,7 +35,7 @@ def test_get_bool_true(env_value):
     os.environ["TEST_GET_BOOL"] = env_value
     cfg = config.EnvironmentConfig()
 
-    assert cfg.getBool("TEST_GET_BOOL") == True
+    assert cfg.getBool("TEST_GET_BOOL")
 
 
 @pytest.mark.parametrize("env_value", ["FALSE", "false", "NO", "no", "n", "0"])
@@ -43,7 +44,7 @@ def test_get_bool_false(env_value):
     os.environ["TEST_GET_BOOL"] = env_value
     cfg = config.EnvironmentConfig()
 
-    assert cfg.getBool("TEST_GET_BOOL") == False
+    assert not cfg.getBool("TEST_GET_BOOL")
 
 
 @pytest.mark.usefixtures("clean_env_int_var")
@@ -91,4 +92,4 @@ def test_get_int_bad_value_raises_exception():
 
 def test_environment_config_validate():
     with pytest.raises(NotImplementedError):
-        cfg = config.EnvironmentConfig(validate=True)
+        config.EnvironmentConfig(validate=True)
