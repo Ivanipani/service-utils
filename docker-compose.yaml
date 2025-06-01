@@ -8,9 +8,9 @@ services:
     environment:
       POSTGRES_USER: remy
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: dabahdb
+      POSTGRES_DB: sobremesadb
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U remy -d dabahdb"]
+      test: ["CMD-SHELL", "pg_isready -U remy -d sobremesadb"]
       interval: 3s
       timeout: 5s
       retries: 5

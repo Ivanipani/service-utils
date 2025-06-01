@@ -3,7 +3,7 @@ import os
 
 import pytest
 
-import dabah.service.utils.config as config
+import sobremesa.service.utils.config as config
 
 logger = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-from dabah.service.utils.grpc import uuid_from_string
+from sobremesa.service.utils.grpc import uuid_from_string
 
 
 def test_uuid_from_string():

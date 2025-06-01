@@ -2,10 +2,10 @@ import uuid
 
 import pytest
 
-import dabah.service.utils.database as database
+import sobremesa.service.utils.database as database
 
 PSQL_CONFIG = database.PostgresConnectionConfig(
-    host="postgres", port=5432, dbname="dabahdb", user="remy", password="password"
+    host="postgres", port=5432, dbname="sobremesadb", user="remy", password="password"
 )
 
 

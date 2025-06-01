@@ -11,8 +11,8 @@
 
 -e file:.
 psycopg==3.2.1
-    # via dabah-service-utils
+    # via sobremesa-service-utils
 python-dotenv==1.0.1
-    # via dabah-service-utils
+    # via sobremesa-service-utils
 typing-extensions==4.12.2
     # via psycopg

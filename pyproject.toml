@@ -1,5 +1,5 @@
 [project]
-name = "dabah.service.utils"
+name = "sobremesa.service.utils"
 description = "Common setup, configuration logic for Python services"
 authors = [
     { name = "Ivan Perdomo", email = "iperdomo2016@gmail.com" }
@@ -11,6 +11,9 @@ dependencies = [
 dynamic = ["version"]
 readme = "README.md"
 requires-python = ">= 3.12"
+
+[project.optional-dependencies]
+dev = [ "pytest" ]
 
 [build-system]
 requires = ["hatchling"]
@@ -26,7 +29,7 @@ dev-dependencies = [
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["dabah"]
+packages = ["sobremesa"]
 
 [tool.pytest.ini_options]
 log_cli = 1

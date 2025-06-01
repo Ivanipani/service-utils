@@ -17,9 +17,9 @@ packaging==24.1
 pluggy==1.5.0
     # via pytest
 psycopg==3.2.1
-    # via dabah-service-utils
+    # via sobremesa-service-utils
 pytest==8.3.2
 python-dotenv==1.0.1
-    # via dabah-service-utils
+    # via sobremesa-service-utils
 typing-extensions==4.12.2
     # via psycopg

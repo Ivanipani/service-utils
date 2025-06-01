@@ -1,4 +1,4 @@
 # Service Utils
-Common setup + configuration logic for Dabah's Python services.
+Common setup + configuration logic for sobremesa's Python services.
 
-Package name is `dabah.service.utils`.
+Package name is `sobremesa.service.utils`.
