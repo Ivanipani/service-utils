@@ -1,6 +1,7 @@
 [project]
 name = "sobremesa.service.utils"
 description = "Common setup, configuration logic for Python services"
+version = "0.1.0"
 authors = [
     { name = "Ivan Perdomo", email = "iperdomo2016@gmail.com" }
 ]
@@ -8,7 +9,6 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "psycopg>=3.2.1",
 ]
-dynamic = ["version"]
 readme = "README.md"
 requires-python = ">= 3.12"
 
@@ -29,6 +29,3 @@ log_cli_level = "DEBUG"
 [tool.ruff.lint]
 extend-select = ["I", "UP"]
 
-[tool.hatch.version]
-path = ".project-version"
-pattern = "(?P<version>[^']+)"
